@@ -1,3 +1,6 @@
+$ python -m compileall -q main.py mini_git tests
+compileall: PASS
+
 $ python -m unittest discover -s tests -v
 test_ancestors_returns_complete_set (test_mini_git.MiniGitRepositoryTests.test_ancestors_returns_complete_set) ... ok
 test_branch_switch_and_commit_update_only_current_branch (test_mini_git.MiniGitRepositoryTests.test_branch_switch_and_commit_update_only_current_branch) ... ok
@@ -15,6 +18,6 @@ test_program_does_not_call_standard_sort_apis (test_mini_git.SourceConstraintTes
 test_repl_runs_commands_and_exits (test_mini_git.SourceConstraintTests.test_repl_runs_commands_and_exits) ... ok
 
 ----------------------------------------------------------------------
-Ran 14 tests in 0.566s
+Ran 14 tests in 0.531s
 
 OK
