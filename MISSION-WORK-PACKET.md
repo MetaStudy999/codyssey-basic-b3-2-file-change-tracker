@@ -8,6 +8,8 @@
 - Work branch: `mission/b3-2`
 - Dependency: `NONE`
 - Starting target-repository baseline: `42983da7400e7690b91fbeb39d23ae1c397c4166`
+- Mission PR: `#1`
+- Mission merge commit: `c75cf2dfcde332eae5092b2150a94d48f73830d8`
 
 ## 2. Control Tower Baseline
 
@@ -27,7 +29,7 @@ That path does not exist at the frozen baseline. The actual frozen-baseline inde
 
 `docs/02-domains/03-data-structures-algorithms/b3-2-mini-git.md`
 
-This is recorded as a Control-Tower documentation gap only; the Control Tower is not modified by this Workcell.
+This is recorded as a Control-Tower documentation gap only; the Control Tower was not modified by this Workcell.
 
 ## 3. Source Inventory
 
@@ -50,7 +52,7 @@ This is recorded as a Control-Tower documentation gap only; the Control Tower is
 
 - Source Mode: `MISSION-LED`
 - Source Confidence: `MEDIUM`
-- G1 Source Gap:
+- Remaining Source Gaps:
   - Official Evaluation provenance remains unverified.
   - The frozen Starter Packet contains a stale/wrong representative Mission-index path.
 
@@ -92,7 +94,7 @@ Create one CLI-based Mini Git program that runs on Python 3.10+ and implements t
 
 ### Non-scope / bonus backlog
 
-The following are optional and will not delay completion:
+The following are optional and did not delay completion:
 
 - text-file `diff`
 - merge command / two-parent merge commit CLI
@@ -250,11 +252,11 @@ Expected output was not substituted for evidence.
 - [x] G5 RUNTIME — actual REPL execution PASS
 - [x] G6 EVIDENCE — test and REPL evidence stored
 - [x] G7 LEARN — beginner learning guide complete
-- [ ] G8 MERGE — PR #1 pending merge
+- [x] G8 MERGE — PR #1 squash-merged, merge commit `c75cf2dfcde332eae5092b2150a94d48f73830d8`
 
 ## 15. STOP Rule
 
-Pre-merge STOP conditions are satisfied:
+MISSION COMPLETE criteria are satisfied:
 
 - confirmed Mission requirements: PASS
 - automated tests: PASS
@@ -263,12 +265,13 @@ Pre-merge STOP conditions are satisfied:
 - learning material: complete
 - BLOCKER: 0
 - MAJOR: 0
+- Mission PR: MERGED
 
-After PR #1 is merged and final Handoff/result metadata are left in this Mission repository, stop. Bonus work must not delay completion.
+Bonus work remains backlog and does not delay completion.
 
 ## 16. Handoff Contract
 
-At completion leave:
+Completion metadata is left in:
 
 - `HANDOFF.md`
 - `mission-result.yaml`
