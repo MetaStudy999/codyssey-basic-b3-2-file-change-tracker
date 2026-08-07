@@ -54,7 +54,7 @@ This is recorded as a Control-Tower documentation gap only; the Control Tower is
   - Official Evaluation provenance remains unverified.
   - The frozen Starter Packet contains a stale/wrong representative Mission-index path.
 
-G1 may close because the official Mission PDF is valid and sufficient to define the implementation. The unverified Evaluation file is used only as a review aid where it does not add requirements beyond the Mission.
+G1 is closed because the official Mission PDF is valid and sufficient to define the implementation. The unverified Evaluation file is used only as a review aid where it does not add requirements beyond the Mission.
 
 ## 5. Mission Contract
 
@@ -70,12 +70,12 @@ Create one CLI-based Mini Git program that runs on Python 3.10+ and implements t
 4. Invalid input uses standardized concise errors such as `Invalid args`, `Unknown branch: <name>`, `Unknown commit: <hash>`.
 5. Commit nodes contain `hash`, `message`, `author`, `timestamp`, `parents`.
 6. Commit storage supports fast hash lookup.
-7. Commit hashes are unique within a session.
+7. Commit hashes are unique within a repository session.
 8. The commit graph remains a DAG.
 9. Maintain at least two inverted indexes: keyword -> commit hashes and author -> commit hashes.
 10. Keyword index tokens come from whitespace split + lowercase normalization.
 11. Do not use Python standard sorting APIs such as `sorted()` or `list.sort()`.
-12. `INIT <user_name>` resets the repository, creates `main`, sets HEAD, and records the current author.
+12. `INIT <user_name>` initializes/reset the in-memory repository, creates `main`, sets HEAD, and records the current author.
 13. `BRANCH <name>` creates a branch at the current commit.
 14. `SWITCH <name>` changes HEAD to the named branch.
 15. `COMMIT <message>` creates a commit whose parent is the current branch head when one exists and updates indexes.
@@ -100,41 +100,34 @@ The following are optional and will not delay completion:
 
 ## 6. Requirement Traceability
 
-| ID | Requirement | Primary Source |
-|---|---|---|
-| REQ-B3-2-001 | Case-insensitive CLI and quoted strings | Mission PDF p.2-3 / Mission MD §4.1 |
-| REQ-B3-2-002 | Standard option forms and concise errors | Mission PDF p.3 / Mission MD §4.1 |
-| REQ-B3-2-003 | Commit model + DAG + fast hash lookup + unique hash | Mission PDF p.3 / Mission MD §4.2 |
-| REQ-B3-2-004 | keyword/author inverted indexes | Mission PDF p.3 / Mission MD §4.3 |
-| REQ-B3-2-005 | No standard sorting APIs; custom comparator-capable sort | Mission PDF p.3, p.5-6 / Mission MD §4.4, §7 |
-| REQ-B3-2-006 | INIT/BRANCH/SWITCH/COMMIT | Mission PDF p.3-4 / Mission MD §4.5 |
-| REQ-B3-2-007 | Parent-before-child LOG | Mission PDF p.4 / Mission MD §4.5 |
-| REQ-B3-2-008 | date/author sorted LOG | Mission PDF p.4 / Mission MD §4.5 |
-| REQ-B3-2-009 | Undirected shortest PATH + lexicographic tie-break + No path | Mission PDF p.4 / Mission MD §4.5 |
-| REQ-B3-2-010 | All ANCESTORS | Mission PDF p.4 / Mission MD §4.5 |
-| REQ-B3-2-011 | Inverted-index SEARCH keyword/author | Mission PDF p.4 / Mission MD §4.5 |
-| REQ-B3-2-012 | REPL and exit/quit | Mission PDF p.2 / Mission MD §2.4 |
-| REQ-B3-2-013 | Python 3.10+, separated algorithm logic, docstrings | Mission PDF p.5-6 / Mission MD §6-7 |
-| REQ-B3-2-014 | No file-content tracking/network; persistence not required | Mission PDF p.6 / Mission MD §7 |
-| REQ-B3-2-015 | `main.py`-style entry point + README | Mission PDF p.2 / Mission MD §2.5 |
+| ID | Requirement | Primary Source | Final Status |
+|---|---|---|---|
+| REQ-B3-2-001 | Case-insensitive CLI and quoted strings | Mission PDF p.2-3 / Mission MD §4.1 | PASS |
+| REQ-B3-2-002 | Standard option forms and concise errors | Mission PDF p.3 / Mission MD §4.1 | PASS |
+| REQ-B3-2-003 | Commit model + DAG + fast hash lookup + unique hash | Mission PDF p.3 / Mission MD §4.2 | PASS |
+| REQ-B3-2-004 | keyword/author inverted indexes | Mission PDF p.3 / Mission MD §4.3 | PASS |
+| REQ-B3-2-005 | No standard sorting APIs; custom comparator-capable sort | Mission PDF p.3, p.5-6 / Mission MD §4.4, §7 | PASS |
+| REQ-B3-2-006 | INIT/BRANCH/SWITCH/COMMIT | Mission PDF p.3-4 / Mission MD §4.5 | PASS |
+| REQ-B3-2-007 | Parent-before-child LOG | Mission PDF p.4 / Mission MD §4.5 | PASS |
+| REQ-B3-2-008 | date/author sorted LOG | Mission PDF p.4 / Mission MD §4.5 | PASS |
+| REQ-B3-2-009 | Undirected shortest PATH + lexicographic tie-break + No path | Mission PDF p.4 / Mission MD §4.5 | PASS |
+| REQ-B3-2-010 | All ANCESTORS | Mission PDF p.4 / Mission MD §4.5 | PASS |
+| REQ-B3-2-011 | Inverted-index SEARCH keyword/author | Mission PDF p.4 / Mission MD §4.5 | PASS |
+| REQ-B3-2-012 | REPL and exit/quit | Mission PDF p.2 / Mission MD §2.4 | PASS |
+| REQ-B3-2-013 | Python 3.10+, separated algorithm logic, docstrings | Mission PDF p.5-6 / Mission MD §6-7 | PASS |
+| REQ-B3-2-014 | No file-content tracking/network; persistence not required | Mission PDF p.6 / Mission MD §7 | PASS |
+| REQ-B3-2-015 | `main.py`-style entry point + README | Mission PDF p.2 / Mission MD §2.5 | PASS |
 
 ## 7. Repository Baseline
 
-At Workcell start the repository contains only:
+At Workcell start the repository contained only:
 
 - `README.md`
 - `b3-2-mission.md`
 - `b3-2-mission.pdf`
 - `b3-2-evaluation.md`
 
-There is no implementation, test suite, data model, REPL, or evidence package yet.
-
-Baseline status:
-
-- Code: `TODO`
-- Tests: `TODO`
-- Runtime evidence: `TODO`
-- Learning content: `TODO`
+There was no implementation, test suite, data model, REPL, or evidence package.
 
 ## 8. Minimal Sufficient Design
 
@@ -150,98 +143,134 @@ tests/
   test_mini_git.py
 docs/
   LEARNING.md
+  REVIEW.md
 evidence/
   test-output.txt
   repl-transcript.txt
 ```
 
-Design rules:
+Implemented design rules:
 
-- Deterministic counter-based hashes for session uniqueness and testability.
-- Insertion-ordered commit store for deterministic parent-before-child traversal support.
+- Deterministic counter-based hashes for repository-session uniqueness and testability.
+- Insertion-ordered commit store for deterministic graph traversal.
 - Custom stable merge sort reused for date/author ordering and lexical neighbor ordering.
-- BFS for shortest path with custom lexical neighbor ordering to satisfy the tie-break rule.
+- BFS for shortest path with lexical neighbor ordering to satisfy the tie-break rule.
 - Ancestor traversal guarded by a visited set.
-- Search candidates always originate from the inverted indexes; multi-token phrase queries intersect postings before candidate verification.
+- Search candidates originate from inverted indexes; multi-token phrase queries intersect postings before candidate verification.
 
-## 9. Agent Routing
+## 9. Agent Routing / Review Budget
 
 - Orchestrator / Integrator: ChatGPT
-- Primary Builder: ChatGPT in this Workcell because no separate Codex execution surface is available here
+- Primary Builder: ChatGPT in this Workcell
 - Automated test harness: Python `unittest` + CLI subprocess tests + static forbidden-sort check
-- Independent reviewer: one GitHub PR review pass by ChatGPT against Source/Test evidence; no second reviewer unless BLOCKER/MAJOR remains
-- Human runtime: not required for this in-memory CLI because the available execution environment can run Python and the REPL end-to-end
+- Separate independent reviewer surface: unavailable in the current Workcell; no independent-model review is claimed
+- Compensating G4 review: one source-constrained PR self-audit recorded in `docs/REVIEW.md`
+- Human runtime: not required for this in-memory CLI because the available execution environment ran Python and the REPL end-to-end
 
-Review budget:
+Review budget actually used:
 
-- Self review: 1
-- Independent review: 1
-- Targeted re-test after fixes: at most 1 unless a blocking defect remains
+- Source/implementation self review: 1
+- PR G4 self-audit: 1
+- Targeted final compile + test re-run: 1
+- Additional specialist agents: 0 (no trigger requiring them)
 
-## 10. Test Plan
+## 10. Test Result
 
-- INIT creates/reset main, HEAD, user.
-- Branch creation/switch and branch-local commit movement.
-- Unknown branch and invalid arguments.
-- Hash uniqueness and parent links.
-- DAG parent-before-child LOG across branches/disconnected roots.
-- Custom date/author sort and forbidden API static check.
-- PATH shortest route, disconnected `No path`, and lexicographic tie-break.
-- ANCESTORS complete set.
-- Keyword and author SEARCH correctness and index-origin behavior.
-- Multi-token/quoted search query.
-- Case-insensitive commands and quoted commit/user arguments.
-- REPL `exit` / `quit`.
-
-## 11. Runtime Plan
-
-Execute locally in a Python 3.10+ environment:
+Actual validation:
 
 ```bash
+python -m compileall -q main.py mini_git tests
 python -m unittest discover -s tests -v
-python main.py
 ```
 
-A scripted REPL session will be captured as actual evidence.
+Result:
 
-## 12. Evidence Plan
+- compileall: PASS
+- unittest: 14 / 14 PASS
 
-Required evidence will include:
+Covered paths:
 
-- test runner output
-- representative REPL transcript
-- branch/commit log output
-- path, ancestors, and search output
-- code locations for custom sorting and inverted indexing
+- INIT / reset main, HEAD, user
+- branch creation/switch and branch-local commit movement
+- concise unknown branch / invalid args / unknown commit errors
+- hash uniqueness and parent links
+- DAG parent-before-child LOG
+- custom date/author sort
+- static forbidden standard sort API check
+- PATH shortest route, disconnected `No path`, lexicographic tie-break
+- ANCESTORS complete set
+- keyword and author inverted-index search
+- multi-token / quoted search query
+- case-insensitive commands and quoted commit/user arguments
+- REPL `exit` / `quit` via subprocess
 
-Expected output is not evidence; only actual executed output will be stored.
+## 11. Runtime Result
+
+Actual CLI runtime was executed in the available Python environment (Python 3.13.5, using syntax compatible with Python 3.10+).
+
+Representative scenarios include:
+
+- initialization
+- commit creation
+- branch divergence and switching
+- LOG
+- PATH
+- ANCESTORS
+- keyword / author SEARCH
+- author sort
+- disconnected roots returning `No path`
+
+Result: `PASS`.
+
+## 12. Evidence Result
+
+Actual evidence:
+
+- `evidence/test-output.txt` — compile + 14-test output
+- `evidence/repl-transcript.txt` — executed REPL transcript
+- `docs/REVIEW.md` — source-constrained review and findings
+- `mini_git/sorting.py` — direct sorting implementation
+- `mini_git/repository.py` — DAG/index/traversal implementation
+
+Expected output was not substituted for evidence.
 
 ## 13. Dependency / Drift Check
 
 - Official dependency: `NONE`
 - Recommended dependency: `NONE`
 - Control-Tower drift: wrong Mission-index filename in Starter Packet, documented above
+- Control Tower modifications by this Workcell: `NONE`
 
 ## 14. Gate Checklist
 
-- [x] G1 SOURCE - source states/mode/gaps and contract established
-- [ ] G2 BUILD
-- [ ] G3 TEST
-- [ ] G4 REVIEW
-- [ ] G5 RUNTIME
-- [ ] G6 EVIDENCE
-- [ ] G7 LEARN
-- [ ] G8 MERGE
+- [x] G1 SOURCE — Mission valid, source mode/confidence/gaps fixed
+- [x] G2 BUILD — required Mini Git implementation complete
+- [x] G3 TEST — compileall + 14/14 tests PASS
+- [x] G4 REVIEW — source-constrained review, BLOCKER=0, MAJOR=0
+- [x] G5 RUNTIME — actual REPL execution PASS
+- [x] G6 EVIDENCE — test and REPL evidence stored
+- [x] G7 LEARN — beginner learning guide complete
+- [ ] G8 MERGE — PR #1 pending merge
 
 ## 15. STOP Rule
 
-Stop when all confirmed Mission requirements pass, required tests and runtime evidence exist, BLOCKER=0, MAJOR=0, learning material is present, and the Mission PR is merged. Bonus work must not delay completion.
+Pre-merge STOP conditions are satisfied:
+
+- confirmed Mission requirements: PASS
+- automated tests: PASS
+- actual runtime: PASS
+- required evidence: complete
+- learning material: complete
+- BLOCKER: 0
+- MAJOR: 0
+
+After PR #1 is merged and final Handoff/result metadata are left in this Mission repository, stop. Bonus work must not delay completion.
 
 ## 16. Handoff Contract
 
-At completion create:
+At completion leave:
 
 - `HANDOFF.md`
 - `mission-result.yaml`
 
-They must record final Mission commit/merge SHA, PR, Source Mode/Confidence/Gaps, requirement status, G1-G8 status, tests, runtime/evidence, learning status, BLOCKER/MAJOR counts, and remaining bonus backlog.
+They record Mission/Control Tower SHAs, PR/merge state, Source Mode/Confidence/Gaps, requirement status, G1-G8 status, tests, runtime/evidence, learning status, BLOCKER/MAJOR counts, and remaining bonus backlog.
