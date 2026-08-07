@@ -1,0 +1,42 @@
+$ python main.py
+mini-git> Initialized repository.
+Current branch: main
+Current user: Alice
+mini-git> [main 000001] Initial commit
+mini-git> Created branch: feature
+mini-git> [main 000002] Main work
+mini-git> Switched to branch: feature
+mini-git> [feature 000003] Add login feature
+mini-git> commit 000001 (Alice, 2026-08-07T19:43:34+00:00)
+Initial commit
+commit 000002 (Alice, 2026-08-07T19:43:34+00:00) [main]
+Main work
+commit 000003 (Alice, 2026-08-07T19:43:34+00:00) [feature]
+Add login feature
+mini-git> Path: 000002 -> 000001 -> 000003
+mini-git> commit 000001 (Alice, 2026-08-07T19:43:34+00:00)
+Initial commit
+mini-git> Found 1 commit(s):
+- 000003: Add login feature
+mini-git> Found 3 commit(s):
+- 000001: Initial commit
+- 000002: Main work
+- 000003: Add login feature
+mini-git> commit 000001 (Alice, 2026-08-07T19:43:34+00:00)
+Initial commit
+commit 000002 (Alice, 2026-08-07T19:43:34+00:00) [main]
+Main work
+commit 000003 (Alice, 2026-08-07T19:43:34+00:00) [feature]
+Add login feature
+mini-git> 
+
+$ python main.py  # disconnected roots / No path
+mini-git> Initialized repository.
+Current branch: main
+Current user: Alice
+mini-git> Created branch: orphan
+mini-git> [main 000001] Main root
+mini-git> Switched to branch: orphan
+mini-git> [orphan 000002] Orphan root
+mini-git> No path
+mini-git> 
