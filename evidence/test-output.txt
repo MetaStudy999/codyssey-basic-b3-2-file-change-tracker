@@ -1,0 +1,20 @@
+$ python -m unittest discover -s tests -v
+test_ancestors_returns_complete_set (test_mini_git.MiniGitRepositoryTests.test_ancestors_returns_complete_set) ... ok
+test_branch_switch_and_commit_update_only_current_branch (test_mini_git.MiniGitRepositoryTests.test_branch_switch_and_commit_update_only_current_branch) ... ok
+test_case_insensitive_commands_and_quoted_arguments (test_mini_git.MiniGitRepositoryTests.test_case_insensitive_commands_and_quoted_arguments) ... ok
+test_custom_date_and_author_sort (test_mini_git.MiniGitRepositoryTests.test_custom_date_and_author_sort) ... ok
+test_hashes_are_unique_and_parent_links_follow_head (test_mini_git.MiniGitRepositoryTests.test_hashes_are_unique_and_parent_links_follow_head) ... ok
+test_init_sets_main_head_and_user_and_resets_state (test_mini_git.MiniGitRepositoryTests.test_init_sets_main_head_and_user_and_resets_state) ... ok
+test_keyword_and_author_search_use_indexed_postings (test_mini_git.MiniGitRepositoryTests.test_keyword_and_author_search_use_indexed_postings) ... ok
+test_log_places_every_parent_before_child (test_mini_git.MiniGitRepositoryTests.test_log_places_every_parent_before_child) ... ok
+test_no_path_for_disconnected_roots (test_mini_git.MiniGitRepositoryTests.test_no_path_for_disconnected_roots) ... ok
+test_shortest_path_and_lexical_tie_break (test_mini_git.MiniGitRepositoryTests.test_shortest_path_and_lexical_tie_break) ... ok
+test_unknown_branch_and_invalid_args_are_concise (test_mini_git.MiniGitRepositoryTests.test_unknown_branch_and_invalid_args_are_concise) ... ok
+test_unknown_commit_error (test_mini_git.MiniGitRepositoryTests.test_unknown_commit_error) ... ok
+test_program_does_not_call_standard_sort_apis (test_mini_git.SourceConstraintTests.test_program_does_not_call_standard_sort_apis) ... ok
+test_repl_runs_commands_and_exits (test_mini_git.SourceConstraintTests.test_repl_runs_commands_and_exits) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.566s
+
+OK
