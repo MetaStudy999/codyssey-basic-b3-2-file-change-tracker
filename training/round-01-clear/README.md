@@ -8,6 +8,14 @@
 - Runtime Mission: **⬜ NOT STARTED**
 - Runtime CLEAR: **아님**
 
+## 선행 학습
+
+- **필수 선행 미션:** 없음
+- **권장 선행 미션:** B3-1, B2-2
+- **있으면 좋은 선행 지식:** Git commit/branch/history, Graph/DAG, 정렬 알고리즘 기초
+
+B3-1의 자료구조·정렬 경험과 B2-2의 Git branch/commit/history 경험을 알고 있으면 B3-2의 Mini Git 구조를 이해하기 쉬워집니다. 다만 해당 핵심 개념을 이미 알고 있다면 두 미션을 CLEAR하지 않고도 시작할 수 있습니다.
+
 ## 문서 순서
 
 1. `REFERENCE-STATUS.md` — 현재 Reference 판정
