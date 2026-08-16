@@ -18,15 +18,18 @@ B3-1의 자료구조·정렬 경험과 B2-2의 Git branch/commit/history 경험�
 
 ## 문서 순서
 
-1. `REFERENCE-STATUS.md` — 현재 Reference 판정
-2. `REFERENCE-BUILD.md` — 설계와 자체감사 결과
-3. `BEGINNER-GUIDE.md` — Phase C 입문자 단계별 실행
-4. `CHECKLIST.md` — Reference/Runtime/CLEAR Gate
-5. `reference/README.md` — 구현 구조와 실행
-6. `docs/requirements-mapping.md` — 요구→구현→검증→Evidence
-7. `docs/evaluation-qa.md` — 설명형 평가
-8. `evidence/README.md` — Runtime 증빙 계획
-9. `environment/verify.sh` — 자동검증
+1. `START-CHECK.md` — Git history/Graph/정렬/Python 시작 전 자가진단
+2. `REFERENCE-STATUS.md` — 현재 Reference 판정
+3. `REFERENCE-BUILD.md` — 설계와 자체감사 결과
+4. `BEGINNER-GUIDE.md` — Phase C 입문자 단계별 실행
+5. `CHECKLIST.md` — Reference/Runtime/CLEAR Gate
+6. `reference/README.md` — 구현 구조와 실행
+7. `docs/requirements-mapping.md` — 요구→구현→검증→Evidence
+8. `docs/evaluation-qa.md` — 설명형 평가
+9. `evidence/README.md` — Runtime 증빙 계획
+10. `environment/verify.sh` — 자동검증
+
+`START-CHECK.md`는 공식 Gate가 아니라 현재 지식 상태를 확인하고 부족한 부분만 보충하기 위한 안내입니다.
 
 ## 핵심 원칙
 
